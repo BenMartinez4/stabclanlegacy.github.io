@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Coolben",
+        "file": "Coolben.html",
+        "joinDate": "2014",
+        "roles": "Member"
+    },
+    {
+        "name": "Example Member",
+        "file": "example.html",
+        "joinDate": "2010",
+        "roles": "Founder, Tournament Winner"
+    }
+]
