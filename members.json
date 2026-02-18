@@ -1,14 +1,14 @@
 [
     {
-        "name": "Example Member",
-        "file": "example.html",
-        "joinDate": "2010",
-        "roles": "Founder, Tournament Winner"
-    },
-    {
         "name": "Coolben",
         "file": "Coolben.html",
         "joinDate": "2018",
         "roles": "Leader"
+    },
+    {
+        "name": "Sergawesome",
+        "file": "Sergawesome.html",
+        "joinDate": "2009",
+        "roles": "Founder"
     }
 ]
