@@ -1,23 +1,22 @@
-# Benjamin (STAB_???)
+# Coolben (LEADER)
 
-**Join Date:** 2009-01-01  
-**Years in Clan:** 17  
+**Join Date:** 2018-10-01  
+**Years in Clan:** 8  
 **Status:** Active  
-**Roles:** Founder, Leader
+**Roles:** Leader, Tournment Champion, Council member, BATS Member, Trainer, ELITE SQUAD, Recruiter
 
 ---
 
 ## 🏆 Accomplishments
-- Founded STAB Clan in 2009  
-- Led multiple competitive eras  
+- Leader of STAB since 2024  
+- Won Multiple clan battles
 - Oversaw clan growth and structure  
-- Maintained clan legacy vision
+- Maintained STAB's future
 
 ---
 
 ## 📜 Biography / Notes
-Benjamin established the foundation of STAB Clan and guided its evolution from 2009 through 2026. Known for leadership, consistency, and long-term vision.
-
+Coolben has been a member since 2018, Known as the quiet kid that rapidly moved up the rankings, through skill, loyalty, and a competitive nature.
 ---
 
 ## 🎖 Legacy Eligibility
