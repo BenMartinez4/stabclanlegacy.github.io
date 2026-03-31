@@ -19,6 +19,7 @@
         .nav {
             display: flex;
             align-items: center;
+            justify-content: flex-start; /* LOGO BACK TO LEFT */
             background-color: #000000;
             padding: 20px 30px;
             border-bottom: 3px solid #d4af37;
@@ -76,10 +77,10 @@
                 display: none;
             }
 
-            /* Center logo on mobile */
+            /* Logo stays left on mobile too */
             .nav {
-                justify-content: center;
-                padding: 10px;
+                justify-content: flex-start;
+                padding: 10px 20px;
             }
 
             .nav img {
@@ -96,10 +97,11 @@
             /* Hamburger button BELOW title */
             .hamburger {
                 display: block;
-                font-size: 55px;
-                color: #d4af37;
+                font-size: 60px; /* MUCH BIGGER */
+                color: #d4af37; /* GOLD SO YOU CAN SEE IT */
                 margin: 20px auto 10px auto;
                 cursor: pointer;
+                text-shadow: 0 0 10px #d4af37;
             }
 
             /* Dropdown menu appears BELOW the hamburger */
