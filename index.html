@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STAB Clan Legacy</title>
+    <title>The Legendary STAB CLAN Website</title>
     <style>
         body { 
             font-family: Arial; 
-            background-color: #ffffff;
+            background-color: #ffffff; /* clean white */
             color: #000000;
             margin: 0;
-
-            /* Responsive background image */
-            background-image: url('stabbackground.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Dark overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45); /* dark transparent layer */
-            z-index: -1; /* behind content */
         }
 
         /* Navigation styling */
         .nav {
             display: flex;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 10px 20px;
+            background-color: #000000; /* black bar */
+            padding: 15px 25px;
             border-bottom: 3px solid #d4af37; /* gold underline */
         }
 
         .nav img {
-            height: 50px;
-            margin-right: 25px;
+            height: 80px; /* bigger logo */
+            margin-right: 30px;
 
             /* GOLD GLOW */
             filter: drop-shadow(0 0 6px #d4af37) drop-shadow(0 0 12px #d4af37);
         }
 
         .nav a {
-            margin-right: 20px;
+            margin-right: 25px;
             color: #d4af37; /* gold */
             font-weight: bold;
+            font-size: 20px; /* bigger nav text */
             text-decoration: none;
         }
 
@@ -58,39 +41,21 @@
 
         /* Page content */
         .content {
-            padding: 40px;
-            background-color: rgba(255, 255, 255, 0.85); /* white panel */
-            border-radius: 10px;
-            margin: 40px;
+            padding: 60px;
         }
 
         h1 {
             color: #cc0000; /* deep red */
+            font-size: 48px; /* bigger title */
+            margin-bottom: 10px;
         }
 
-        /* Mobile optimization */
-        @media (max-width: 768px) {
-            body {
-                background-attachment: scroll;
-                background-size: contain;
-                background-position: top center;
-            }
-
-            .content {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            .nav img {
-                height: 40px;
-            }
+        p {
+            font-size: 22px; /* bigger paragraph text */
         }
     </style>
 </head>
 <body>
-
-    <!-- Dark overlay -->
-    <div class="overlay"></div>
 
     <!-- Navigation -->
     <div class="nav">
@@ -106,4 +71,9 @@
     <!-- Page Content -->
     <div class="content">
         <h1>Welcome to the STAB Clan Legacy</h1>
-        <p>Documenting our
+        <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
+    </div>
+
+</body>
+</html>
+
