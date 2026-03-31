@@ -69,7 +69,6 @@
         /* ----------------------------- */
         /* MOBILE LAYOUT REWORK          */
         /* ----------------------------- */
-
         @media (max-width: 700px) {
 
             /* Hide desktop nav links */
@@ -99,14 +98,14 @@
             /* Hamburger BELOW the paragraph */
             .hamburger {
                 display: block;
-                font-size: 65px; /* BIGGER */
-                color: #d4af37; /* GOLD */
+                font-size: 65px;
+                color: #d4af37;
                 margin: 25px auto;
                 cursor: pointer;
                 text-shadow: 0 0 12px #d4af37;
             }
 
-            /* Dropdown menu appears BELOW the hamburger */
+            /* Dropdown menu hidden by default */
             .dropdown {
                 display: none;
                 flex-direction: column;
@@ -122,6 +121,7 @@
                 text-align: center;
                 color: #d4af37;
                 width: 100%;
+                text-decoration: none;
             }
 
             .dropdown a:hover {
@@ -133,6 +133,11 @@
                 background-color: #111;
                 border-bottom: 2px solid #d4af37;
                 font-size: 34px;
+            }
+
+            /* Class to show dropdown */
+            .dropdown.show {
+                display: flex !important;
             }
 
             .content {
@@ -149,7 +154,7 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById("dropdownMenu");
-            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+            menu.classList.toggle("show");
         }
     </script>
 
@@ -176,7 +181,7 @@
 
         <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
 
-        <!-- MOBILE HAMBURGER BUTTON (NOW BELOW THE PARAGRAPH) -->
+        <!-- MOBILE HAMBURGER BUTTON -->
         <div class="hamburger" onclick="toggleMenu()">☰</div>
 
         <!-- MOBILE DROPDOWN MENU -->
@@ -188,9 +193,7 @@
             <a href="awards.html">Awards</a>
             <a href="media.html">Media</a>
         </div>
-
     </div>
 
 </body>
 </html>
-
