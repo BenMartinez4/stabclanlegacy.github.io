@@ -12,26 +12,33 @@
     <style>
         body { 
             font-family: 'Bebas Neue', Arial, sans-serif; 
-            background-color: #000000; /* black background */
+            background-color: #000000;
             color: #ffffff;
             margin: 0;
         }
 
-        /* Navigation styling */
+        /* FIXED NAV BAR */
         .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             align-items: center;
             background-color: #000000;
             padding: 20px 30px;
-            border-bottom: 3px solid #d4af37; /* gold underline */
+            border-bottom: 3px solid #d4af37;
+            z-index: 1000;
         }
 
         .nav img {
-            height: 110px; /* bigger logo */
+            height: 110px;
             margin-right: 35px;
-
-            /* GOLD GLOW */
             filter: drop-shadow(0 0 8px #d4af37) drop-shadow(0 0 14px #d4af37);
+        }
+
+        .nav-links {
+            display: flex;
         }
 
         .nav a {
@@ -46,9 +53,32 @@
             color: #cc0000;
         }
 
+        /* HAMBURGER MENU (hidden on desktop) */
+        .hamburger {
+            display: none;
+            font-size: 40px;
+            color: #d4af37;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        /* DROPDOWN MENU (mobile only) */
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            background-color: #000000;
+            border-top: 2px solid #d4af37;
+            padding: 10px 20px;
+        }
+
+        .dropdown a {
+            margin: 10px 0;
+            font-size: 26px;
+        }
+
         /* Page content */
         .content {
-            padding: 80px;
+            padding: 160px 40px 80px; /* extra top padding because nav is fixed */
             text-align: center;
         }
 
@@ -70,14 +100,22 @@
         /* ----------------------------- */
 
         /* Phones */
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+
             .nav img {
-                height: 70px;
+                height: 80px;
             }
 
-            .nav a {
-                font-size: 20px;
-                margin-right: 15px;
+            .nav-links {
+                display: none; /* hide normal nav */
+            }
+
+            .hamburger {
+                display: block; /* show hamburger */
+            }
+
+            .dropdown {
+                display: none; /* stays hidden until clicked */
             }
 
             h1 {
@@ -89,55 +127,41 @@
             }
 
             .content {
-                padding: 40px 20px;
-            }
-        }
-
-        /* Tablets */
-        @media (min-width: 601px) and (max-width: 1024px) {
-            .nav img {
-                height: 90px;
-            }
-
-            .nav a {
-                font-size: 24px;
-                margin-right: 20px;
-            }
-
-            h1 {
-                font-size: 60px;
-            }
-
-            p {
-                font-size: 26px;
-            }
-
-            .content {
-                padding: 60px 40px;
-            }
-        }
-
-        /* Large desktops */
-        @media (min-width: 1400px) {
-            .content {
-                padding: 100px 200px;
-            }
-
-            h1 {
-                font-size: 80px;
-            }
-
-            p {
-                font-size: 36px;
+                padding: 140px 20px;
             }
         }
     </style>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
 </head>
 <body>
 
     <!-- Navigation -->
     <div class="nav">
         <img src="stabclanlogo.png" alt="STAB Clan Logo">
+
+        <!-- Desktop Links -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="members.html">Members</a>
+            <a href="history.html">History</a>
+            <a href="legacy.html">Legacy Hall</a>
+            <a href="awards.html">Awards</a>
+            <a href="media.html">Media</a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="dropdownMenu" class="dropdown">
         <a href="index.html">Home</a>
         <a href="members.html">Members</a>
         <a href="history.html">History</a>
@@ -154,5 +178,3 @@
 
 </body>
 </html>
-
-
