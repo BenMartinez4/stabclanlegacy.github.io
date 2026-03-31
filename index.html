@@ -3,25 +3,67 @@
 <head>
     <title>STAB Clan Legacy</title>
     <style>
-        body { font-family: Arial; background-color: #111; color: #eee; margin: 40px; }
-        h1 { color: #ff3333; }
-        a { color: #ff3333; }
+        body { 
+            font-family: Arial; 
+            background-color: #ffffff; /* white */
+            color: #000000; /* black text */
+            margin: 0; 
+        }
+
+        /* Navigation styling */
+        .nav {
+            display: flex;
+            align-items: center;
+            background-color: #000000; /* black bar */
+            padding: 10px 20px;
+            border-bottom: 3px solid #d4af37; /* gold underline */
+        }
+
+        .nav img {
+            height: 50px;
+            margin-right: 25px;
+        }
+
+        .nav a {
+            margin-right: 20px;
+            color: #d4af37; /* gold */
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: #cc0000; /* red hover */
+        }
+
+        /* Page content spacing */
+        .content {
+            padding: 40px;
+        }
+
+        h1 {
+            color: #cc0000; /* deep red */
+        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <div style="margin-bottom:20px;">
-        <a href="index.html" style="margin-right:15px;">Home</a>
-        <a href="members.html" style="margin-right:15px;">Members</a>
-        <a href="history.html" style="margin-right:15px;">History</a>
-        <a href="legacy.html" style="margin-right:15px;">Legacy Hall</a>
-        <a href="awards.html" style="margin-right:15px;">Awards</a>
-        <a href="media.html" style="margin-right:15px;">Media</a>
+    <div class="nav">
+        <img src="stabclanlogo.png" alt="STAB Clan Logo">
+        <a href="index.html">Home</a>
+        <a href="members.html">Members</a>
+        <a href="history.html">History</a>
+        <a href="legacy.html">Legacy Hall</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
     </div>
 
-    <h1>Welcome to the STAB Clan Legacy</h1>
-    <p>Documenting our history from 2009–2026.</p>
+    <!-- Page Content -->
+    <div class="content">
+        <h1>Welcome to the STAB Clan Legacy</h1>
+        <p>Documenting our history from 2009–2026.</p>
+    </div>
 
 </body>
 </html>
+
