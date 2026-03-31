@@ -15,9 +15,7 @@
             margin: 0;
         }
 
-        /* ---------------------- */
-        /* DESKTOP NAVIGATION      */
-        /* ---------------------- */
+        /* DESKTOP NAV BAR */
         .nav {
             display: flex;
             align-items: center;
@@ -49,9 +47,7 @@
             color: #cc0000;
         }
 
-        /* ---------------------- */
-        /* PAGE CONTENT            */
-        /* ---------------------- */
+        /* CONTENT */
         .content {
             padding: 60px;
             text-align: center;
@@ -68,102 +64,57 @@
             font-size: 32px;
             color: #d4af37;
             letter-spacing: 1px;
+            margin-bottom: 40px;
         }
 
-        /* ---------------------- */
-        /* MOBILE LAYOUT          */
-        /* ---------------------- */
+        /* GRID OF LINKS UNDER PARAGRAPH */
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .link-grid a {
+            display: block;
+            background-color: #111;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 20px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .link-grid a:hover {
+            background-color: #222;
+            color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* MOBILE ADJUSTMENTS */
         @media (max-width: 700px) {
-
-            /* Hide desktop links */
-            .nav-links {
-                display: none;
-            }
-
-            .nav {
-                justify-content: flex-start;
-                padding: 10px 20px;
-            }
-
-            .nav img {
-                height: 80px;
-                margin: 0;
-            }
-
             h1 {
                 font-size: 48px;
-                margin-top: 20px;
             }
-
             p {
                 font-size: 24px;
             }
-
-            /* Hamburger below paragraph */
-            .hamburger {
-                display: block;
-                font-size: 65px;
-                color: #d4af37;
-                margin: 25px auto;
-                cursor: pointer;
-                text-shadow: 0 0 12px #d4af37;
+            .link-grid {
+                grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+                gap: 15px;
+                max-width: 100%;
+                padding: 0 10px;
             }
-
-            /* Dropdown menu hidden by default */
-            .dropdown {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #000000;
-                border-top: 3px solid #d4af37;
-                padding: 20px 0;
-                z-index: 1000; /* always above content */
+            .link-grid a {
+                font-size: 20px;
+                padding: 15px;
             }
-
-            .dropdown a {
-                font-size: 30px;
-                padding: 18px 0;
-                text-align: center;
-                color: #d4af37;
-                width: 100%;
-                text-decoration: none;
-            }
-
-            .dropdown a:hover {
-                background-color: #111;
-                color: #cc0000;
-            }
-
-            .dropdown a:first-child {
-                background-color: #111;
-                border-bottom: 2px solid #d4af37;
-                font-size: 34px;
-            }
-
-            /* Class to show dropdown */
-            .dropdown.show {
-                display: flex !important;
-            }
-
-            .content {
-                padding: 40px 20px;
-            }
-        }
-
-        /* Hide hamburger on desktop */
-        .hamburger {
-            display: none;
         }
 
     </style>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("dropdownMenu");
-            menu.classList.toggle("show");
-        }
-    </script>
-
 </head>
 <body>
 
@@ -185,12 +136,9 @@
         <h1>The Legendary STAB CLAN Website</h1>
         <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
 
-        <!-- MOBILE HAMBURGER -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-        <!-- MOBILE DROPDOWN MENU -->
-        <div id="dropdownMenu" class="dropdown">
-            <a href="index.html">⬅ Home</a>
+        <!-- GRID OF LINKS BELOW PARAGRAPH -->
+        <div class="link-grid">
+            <a href="index.html">Home</a>
             <a href="members.html">Members</a>
             <a href="history.html">History</a>
             <a href="legacy.html">Legacy Hall</a>
