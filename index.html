@@ -16,7 +16,7 @@
         }
 
         /* ---------------------- */
-        /* DESKTOP NAVIGATION      */
+        /* NAVIGATION BAR          */
         /* ---------------------- */
         .nav {
             display: flex;
@@ -75,16 +75,23 @@
         /* MOBILE GRID OF LINKS   */
         /* ---------------------- */
         .link-grid {
-            display: none; /* hide by default (desktop) */
+            display: none; /* hide on desktop */
         }
 
         /* ---------------------- */
-        /* MOBILE ONLY STYLES      */
+        /* MOBILE STYLES           */
         /* ---------------------- */
         @media (max-width: 700px) {
+
+            /* Hide the nav links, keep logo visible */
+            .nav-links {
+                display: none;
+            }
+
             h1 {
                 font-size: 48px;
             }
+
             p {
                 font-size: 24px;
             }
@@ -123,7 +130,7 @@
 </head>
 <body>
 
-    <!-- DESKTOP NAVIGATION -->
+    <!-- NAVIGATION BAR (logo + links) -->
     <div class="nav">
         <img src="stabclanlogo.png" alt="STAB Clan Logo">
         <div class="nav-links">
