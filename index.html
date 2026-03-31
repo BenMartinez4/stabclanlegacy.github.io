@@ -3,10 +3,8 @@
 <head>
     <title>The Legendary STAB CLAN Website</title>
 
-    <!-- Responsive scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Knife-style clean aggressive font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <style>
@@ -17,18 +15,13 @@
             margin: 0;
         }
 
-        /* FIXED NAV BAR */
+        /* DESKTOP NAV BAR */
         .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
             display: flex;
             align-items: center;
             background-color: #000000;
             padding: 20px 30px;
             border-bottom: 3px solid #d4af37;
-            z-index: 1000;
         }
 
         .nav img {
@@ -53,32 +46,9 @@
             color: #cc0000;
         }
 
-        /* HAMBURGER MENU (hidden on desktop) */
-        .hamburger {
-            display: none;
-            font-size: 40px;
-            color: #d4af37;
-            cursor: pointer;
-            margin-left: auto;
-        }
-
-        /* DROPDOWN MENU (mobile only) */
-        .dropdown {
-            display: none;
-            flex-direction: column;
-            background-color: #000000;
-            border-top: 2px solid #d4af37;
-            padding: 10px 20px;
-        }
-
-        .dropdown a {
-            margin: 10px 0;
-            font-size: 26px;
-        }
-
-        /* Page content */
+        /* CONTENT */
         .content {
-            padding: 160px 40px 80px; /* extra top padding because nav is fixed */
+            padding: 60px;
             text-align: center;
         }
 
@@ -96,39 +66,81 @@
         }
 
         /* ----------------------------- */
-        /* RESPONSIVE DESIGN BREAKPOINTS */
+        /* MOBILE LAYOUT REWORK          */
         /* ----------------------------- */
 
-        /* Phones */
         @media (max-width: 700px) {
+
+            /* Hide desktop nav links */
+            .nav-links {
+                display: none;
+            }
+
+            /* Center logo on mobile */
+            .nav {
+                justify-content: center;
+                padding: 10px;
+            }
 
             .nav img {
                 height: 80px;
+                margin: 0;
             }
 
-            .nav-links {
-                display: none; /* hide normal nav */
-            }
-
-            .hamburger {
-                display: block; /* show hamburger */
-            }
-
-            .dropdown {
-                display: none; /* stays hidden until clicked */
-            }
-
+            /* Title stays big */
             h1 {
                 font-size: 48px;
+                margin-top: 20px;
             }
 
-            p {
-                font-size: 22px;
+            /* Hamburger button BELOW title */
+            .hamburger {
+                display: block;
+                font-size: 55px;
+                color: #d4af37;
+                margin: 20px auto 10px auto;
+                cursor: pointer;
             }
 
+            /* Dropdown menu appears BELOW the hamburger */
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #000000;
+                border-top: 3px solid #d4af37;
+                padding: 20px 0;
+            }
+
+            .dropdown a {
+                font-size: 30px;
+                padding: 18px 0;
+                text-align: center;
+                color: #d4af37;
+                width: 100%;
+            }
+
+            .dropdown a:hover {
+                background-color: #111;
+                color: #cc0000;
+            }
+
+            /* Highlight the HOME/BACK button */
+            .dropdown a:first-child {
+                background-color: #111;
+                border-bottom: 2px solid #d4af37;
+                font-size: 34px;
+            }
+
+            /* Content spacing */
             .content {
-                padding: 140px 20px;
+                padding: 40px 20px;
             }
+        }
+
+        /* Hide hamburger on desktop */
+        .hamburger {
+            display: none;
         }
     </style>
 
@@ -142,11 +154,10 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- DESKTOP NAVIGATION -->
     <div class="nav">
         <img src="stabclanlogo.png" alt="STAB Clan Logo">
 
-        <!-- Desktop Links -->
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="members.html">Members</a>
@@ -155,24 +166,25 @@
             <a href="awards.html">Awards</a>
             <a href="media.html">Media</a>
         </div>
-
-        <!-- Hamburger Icon -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="dropdownMenu" class="dropdown">
-        <a href="index.html">Home</a>
-        <a href="members.html">Members</a>
-        <a href="history.html">History</a>
-        <a href="legacy.html">Legacy Hall</a>
-        <a href="awards.html">Awards</a>
-        <a href="media.html">Media</a>
-    </div>
-
-    <!-- Page Content -->
-    <div class="content">
+    <!-- PAGE TITLE -->
+    <div class="content" style="padding-top:20px;">
         <h1>The Legendary STAB CLAN Website</h1>
+
+        <!-- MOBILE HAMBURGER BUTTON -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <!-- MOBILE DROPDOWN MENU -->
+        <div id="dropdownMenu" class="dropdown">
+            <a href="index.html">⬅ Home</a>
+            <a href="members.html">Members</a>
+            <a href="history.html">History</a>
+            <a href="legacy.html">Legacy Hall</a>
+            <a href="awards.html">Awards</a>
+            <a href="media.html">Media</a>
+        </div>
+
         <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
     </div>
 
