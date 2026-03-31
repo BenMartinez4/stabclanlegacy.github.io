@@ -5,16 +5,24 @@
     <style>
         body { 
             font-family: Arial; 
-            background-color: #ffffff; /* white */
-            color: #000000; /* black text */
-            margin: 0; 
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+
+            /* Transparent background image */
+            background-image: url('stabbackground.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            opacity: 0.97; /* slight transparency effect */
         }
 
         /* Navigation styling */
         .nav {
             display: flex;
             align-items: center;
-            background-color: #000000; /* black bar */
+            background-color: rgba(0, 0, 0, 0.85); /* black with slight transparency */
             padding: 10px 20px;
             border-bottom: 3px solid #d4af37; /* gold underline */
         }
@@ -22,6 +30,9 @@
         .nav img {
             height: 50px;
             margin-right: 25px;
+
+            /* GOLD GLOW */
+            filter: drop-shadow(0 0 6px #d4af37) drop-shadow(0 0 12px #d4af37);
         }
 
         .nav a {
@@ -38,6 +49,9 @@
         /* Page content spacing */
         .content {
             padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85); /* white panel with transparency */
+            border-radius: 10px;
+            margin: 40px;
         }
 
         h1 {
@@ -66,4 +80,3 @@
 
 </body>
 </html>
-
