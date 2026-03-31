@@ -19,7 +19,7 @@
         .nav {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* LOGO BACK TO LEFT */
+            justify-content: flex-start;
             background-color: #000000;
             padding: 20px 30px;
             border-bottom: 3px solid #d4af37;
@@ -77,7 +77,6 @@
                 display: none;
             }
 
-            /* Logo stays left on mobile too */
             .nav {
                 justify-content: flex-start;
                 padding: 10px 20px;
@@ -88,20 +87,23 @@
                 margin: 0;
             }
 
-            /* Title stays big */
             h1 {
                 font-size: 48px;
                 margin-top: 20px;
             }
 
-            /* Hamburger button BELOW title */
+            p {
+                font-size: 24px;
+            }
+
+            /* Hamburger BELOW the paragraph */
             .hamburger {
                 display: block;
-                font-size: 60px; /* MUCH BIGGER */
-                color: #d4af37; /* GOLD SO YOU CAN SEE IT */
-                margin: 20px auto 10px auto;
+                font-size: 65px; /* BIGGER */
+                color: #d4af37; /* GOLD */
+                margin: 25px auto;
                 cursor: pointer;
-                text-shadow: 0 0 10px #d4af37;
+                text-shadow: 0 0 12px #d4af37;
             }
 
             /* Dropdown menu appears BELOW the hamburger */
@@ -127,14 +129,12 @@
                 color: #cc0000;
             }
 
-            /* Highlight the HOME/BACK button */
             .dropdown a:first-child {
                 background-color: #111;
                 border-bottom: 2px solid #d4af37;
                 font-size: 34px;
             }
 
-            /* Content spacing */
             .content {
                 padding: 40px 20px;
             }
@@ -170,11 +170,13 @@
         </div>
     </div>
 
-    <!-- PAGE TITLE -->
+    <!-- PAGE CONTENT -->
     <div class="content" style="padding-top:20px;">
         <h1>The Legendary STAB CLAN Website</h1>
 
-        <!-- MOBILE HAMBURGER BUTTON -->
+        <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
+
+        <!-- MOBILE HAMBURGER BUTTON (NOW BELOW THE PARAGRAPH) -->
         <div class="hamburger" onclick="toggleMenu()">☰</div>
 
         <!-- MOBILE DROPDOWN MENU -->
@@ -187,8 +189,8 @@
             <a href="media.html">Media</a>
         </div>
 
-        <p>Precision. Skill. Dominance. Competitive knifing since 2009.</p>
     </div>
 
 </body>
 </html>
+
