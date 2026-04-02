@@ -1,48 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STAB Clan History (2009–2026)</title>
+    <title>STAB Clan History</title>
+
+    <!-- Clean modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: Arial; background-color: #111; color: #eee; margin: 40px; }
-        h1 { color: #ff3333; }
-        .year {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-left: 3px solid #ff3333;
-        }
-        .year h2 {
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #000;
+            color: #d4af37;
             margin: 0;
-            color: #ff6666;
+            padding: 30px;
+            text-align: center;
         }
-        a { color: #ff3333; }
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 25px;
+        }
+
+        .nav a {
+            margin-right: 18px;
+            color: #d4af37;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .nav a:hover {
+            color: #cc0000;
+        }
+
+        /* Page Title */
+        h1 {
+            color: #cc0000;
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Autobiography */
+        .bio {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #d4af37;
+            font-weight: 300;
+        }
+
+        /* Timeline container */
+        .timeline {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Year label */
+        .year {
+            color: #cc0000;
+            font-size: 26px;
+            margin-top: 35px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Bubble box */
+        .bubble {
+            background-color: #111;
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 0 auto 20px auto;
+            width: 80%;
+            min-height: 60px;
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 32px;
+            }
+            .year {
+                font-size: 22px;
+            }
+            .bubble {
+                width: 90%;
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <div style="margin-bottom:20px;">
-        <a href="index.html" style="margin-right:15px;">Home</a>
-        <a href="members.html" style="margin-right:15px;">Members</a>
-        <a href="history.html" style="margin-right:15px;">History</a>
-        <a href="legacy.html" style="margin-right:15px;">Legacy Hall</a>
-        <a href="awards.html" style="margin-right:15px;">Awards</a>
-        <a href="media.html" style="margin-right:15px;">Media</a>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="roster.html">Roster</a>
+        <a href="history.html">History</a>
+        <a href="legacy.html">Legacy Hall</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
     </div>
 
-    <h1>STAB Clan History (2009–2026)</h1>
-    <p>This timeline documents major events, eras, and milestones in STAB Clan history.</p>
+    <h1>STAB Clan History</h1>
 
-    <div class="year">
-        <h2>2009</h2>
-        <p>Clan founded. Early roster formed.</p>
+    <!-- Autobiography -->
+    <div class="bio">
+        STAB Clan began as a small group of competitive knifers in 2009, built on precision, 
+        discipline, and a love for the craft. What started as a handful of players quickly 
+        evolved into a community defined by loyalty, skill, and a legacy that spans more than 
+        a decade. Through every era, every game, and every challenge, STAB has remained 
+        committed to excellence — not just in gameplay, but in the bonds formed along the way.
+        <br><br>
+        From legendary OGs to rising talent, STAB continues to grow while honoring the players 
+        who shaped its identity. This timeline documents the journey — year by year — from 
+        our earliest days to the present.
     </div>
 
-    <div class="year">
-        <h2>2012</h2>
-        <p>First competitive matches on Black Ops 2.</p>
-    </div>
+    <!-- Timeline -->
+    <div class="timeline">
 
-    <!-- Add more years as needed -->
+        <!-- Generate years 2026 → 2009 -->
+        <h2 class="year">2026</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2025</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2024</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2023</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2022</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2021</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2020</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2019</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2018</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2017</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2016</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2015</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2014</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2013</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2012</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2011</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2010</h2>
+        <div class="bubble"></div>
+
+        <h2 class="year">2009</h2>
+        <div class="bubble"></div>
+
+    </div>
 
 </body>
 </html>
