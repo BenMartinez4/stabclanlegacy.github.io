@@ -1,39 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STAB Legacy Hall</title>
+    <title>Legacy Hall</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: Arial; background-color: #111; color: #eee; margin: 40px; }
-        h1 { color: #ff3333; }
-        .member {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #444;
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #000;
+            color: #d4af37;
+            margin: 0;
+            padding: 30px;
+            text-align: center;
         }
-        a { color: #ff3333; }
+
+        .nav {
+            margin-bottom: 25px;
+        }
+
+        .nav a {
+            margin-right: 18px;
+            color: #d4af37;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: #cc0000;
+        }
+
+        h1 {
+            color: #cc0000;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .desc {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        #searchBar {
+            width: 60%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            background-color: #111;
+            color: #d4af37;
+            margin-bottom: 30px;
+        }
+
+        .member-link {
+            display: block;
+            font-size: 20px;
+            color: #d4af37;
+            margin: 4px 0;
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        .member-link:hover {
+            color: #cc0000;
+        }
+
+        @media (max-width: 700px) {
+            #searchBar { width: 90%; }
+            h1 { font-size: 32px; }
+            .member-link { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
 
-    <div style="margin-bottom:20px;">
-        <a href="index.html" style="margin-right:15px;">Home</a>
-        <a href="members.html" style="margin-right:15px;">Members</a>
-        <a href="history.html" style="margin-right:15px;">History</a>
-        <a href="legacy.html" style="margin-right:15px;">Legacy Hall</a>
-        <a href="awards.html" style="margin-right:15px;">Awards</a>
-        <a href="media.html" style="margin-right:15px;">Media</a>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="roster.html">Roster</a>
+        <a href="history.html">History</a>
+        <a href="legacy.html">Legacy Hall</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
     </div>
 
-    <h1>STAB Legacy Hall</h1>
-    <p>Members who have served 3+ years in the clan.</p>
+    <h1>Legacy Hall</h1>
 
-    <!-- Example entry -->
-    <div class="member">
-        <h2>Example Member</h2>
-        <p>Joined: 2012</p>
-        <p>Years in clan: 12</p>
-        <p>Accomplishments: Leadership, Tournament Wins</p>
+    <div class="desc">
+        The Legacy Hall honors members who have been part of STAB Clan for at least three years.
+        Click any name to view their full profile.
     </div>
+
+    <input type="text" id="searchBar" placeholder="Search Legacy Members..." onkeyup="searchNames()">
+
+    <div id="legacyList"></div>
+
+    <script>
+        const CURRENT_YEAR = 2026;
+
+        fetch("legacy.json")
+            .then(response => response.json())
+            .then(data => {
+                let eligible = data.filter(member => CURRENT_YEAR - member.joined >= 3);
+
+                eligible.sort((a, b) => a.name.localeCompare(b.name));
+
+                let list = document.getElementById("legacyList");
+
+                eligible.forEach(member => {
+                    let link = document.createElement("a");
+                    link.className = "member-link";
+                    link.href = member.profile;
+                    link.textContent = member.name;
+                    list.appendChild(link);
+                });
+            });
+
+        function searchNames() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let names = document.querySelectorAll(".member-link");
+
+            names.forEach(name => {
+                let text = name.textContent.toLowerCase();
+                name.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
 
 </body>
 </html>
