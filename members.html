@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STAB Members</title>
+    <title>STAB Roster</title>
+
+    <!-- Match homepage font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
     <style>
         body { 
-            font-family: Arial; 
-            background-color: #111; 
-            color: #eee; 
-            margin: 40px; 
+            font-family: 'Bebas Neue', Arial, sans-serif;
+            background-color: #000;
+            color: #d4af37;
+            margin: 0;
+            padding: 40px;
         }
-        h1 { 
-            color: #ff3333; 
+
+        /* Navigation */
+        .nav {
+            margin-bottom: 30px;
         }
+
+        .nav a {
+            margin-right: 20px;
+            color: #d4af37;
+            font-size: 28px;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav a:hover {
+            color: #cc0000;
+        }
+
+        /* Page Title */
+        h1 {
+            color: #cc0000;
+            font-size: 72px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 28px;
+            color: #d4af37;
+            margin-bottom: 40px;
+        }
+
+        /* Member Cards */
         .member {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid #444;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #333;
         }
-        a { 
-            color: #ff3333; 
+
+        .member h2 a {
+            color: #ff6666;
+            font-size: 40px;
+            text-decoration: none;
+        }
+
+        .member h2 a:hover {
+            color: #cc0000;
+        }
+
+        .member p {
+            font-size: 24px;
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <div style="margin-bottom:20px;">
-        <a href="index.html" style="margin-right:15px;">Home</a>
-        <a href="members.html" style="margin-right:15px;">Members</a>
-        <a href="history.html" style="margin-right:15px;">History</a>
-        <a href="legacy.html" style="margin-right:15px;">Legacy Hall</a>
-        <a href="awards.html" style="margin-right:15px;">Awards</a>
-        <a href="media.html" style="margin-right:15px;">Media</a>
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="roster.html">Roster</a>
+        <a href="history.html">History</a>
+        <a href="legacy.html">Legacy Hall</a>
+        <a href="awards.html">Awards</a>
+        <a href="media.html">Media</a>
     </div>
 
-    <h1>STAB Clan Members</h1>
-    <p>This page lists all members, their join dates, and accomplishments.</p>
+    <h1>STAB Roster</h1>
+    <p>Active members and their official titles.</p>
 
-    <!-- ⭐ Auto-generated member list will appear here -->
+    <!-- Auto-generated roster -->
     <div id="memberList"></div>
 
-    <!-- ⭐ JavaScript that loads members.json and builds the list -->
     <script>
     fetch('members.json')
         .then(response => response.json())
@@ -52,9 +98,9 @@
                 div.className = 'member';
 
                 div.innerHTML = `
-                    <h2><a href="members/${member.file}" style="color:#ff6666;">${member.name}</a></h2>
-                    <p>Join Date: ${member.joinDate}</p>
-                    <p>Roles: ${member.roles}</p>
+                    <h2><a href="members/${member.file}">${member.name}</a></h2>
+                    <p>Title: ${member.roles}</p>
+                    <p>Joined: ${member.joinDate}</p>
                 `;
 
                 container.appendChild(div);
