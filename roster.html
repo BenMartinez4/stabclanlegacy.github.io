@@ -3,16 +3,16 @@
 <head>
     <title>STAB Roster</title>
 
-    <!-- Match homepage font -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <style>
-        body { 
+        body {
             font-family: 'Bebas Neue', Arial, sans-serif;
             background-color: #000;
             color: #d4af37;
             margin: 0;
             padding: 40px;
+            text-align: center;
         }
 
         /* Navigation */
@@ -32,7 +32,7 @@
             color: #cc0000;
         }
 
-        /* Page Title */
+        /* Titles */
         h1 {
             color: #cc0000;
             font-size: 72px;
@@ -40,78 +40,36 @@
             letter-spacing: 2px;
         }
 
-        p {
+        .category-title {
+            color: #cc0000;
+            font-size: 48px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .member-name {
             font-size: 28px;
             color: #d4af37;
-            margin-bottom: 40px;
+            margin: 4px 0;
+            letter-spacing: 1px;
         }
 
-        /* Member Cards */
-        .member {
-            padding: 20px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #333;
-        }
-
-        .member h2 a {
-            color: #ff6666;
-            font-size: 40px;
-            text-decoration: none;
-        }
-
-        .member h2 a:hover {
-            color: #cc0000;
-        }
-
-        .member p {
-            font-size: 24px;
-            margin: 5px 0;
+        /* Mobile adjustments */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 48px;
+            }
+            .category-title {
+                font-size: 36px;
+            }
+            .member-name {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="roster.html">Roster</a>
-        <a href="history.html">History</a>
-        <a href="legacy.html">Legacy Hall</a>
-        <a href="awards.html">Awards</a>
-        <a href="media.html">Media</a>
-    </div>
-
-    <h1>STAB Roster</h1>
-    <p>Active members and their official titles.</p>
-
-    <!-- Auto-generated roster -->
-    <div id="memberList"></div>
-
-    <script>
-    fetch('members.json')
-        .then(response => response.json())
-        .then(members => {
-            const container = document.getElementById('memberList');
-
-            members.forEach(member => {
-                const div = document.createElement('div');
-                div.className = 'member';
-
-                div.innerHTML = `
-                    <h2><a href="members/${member.file}">${member.name}</a></h2>
-                    <p>Title: ${member.roles}</p>
-                    <p>Joined: ${member.joinDate}</p>
-                `;
-
-                container.appendChild(div);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading members.json:', error);
-        });
-    </script>
-
-</body>
-</html>
-
-
