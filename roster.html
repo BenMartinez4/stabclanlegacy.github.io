@@ -3,7 +3,6 @@
 <head>
     <title>STAB Roster</title>
 
-    <!-- Clean modern font that respects lowercase -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
@@ -16,11 +15,7 @@
             text-align: center;
         }
 
-        /* Navigation */
-        .nav {
-            margin-bottom: 25px;
-        }
-
+        .nav { margin-bottom: 25px; }
         .nav a {
             margin-right: 18px;
             color: #d4af37;
@@ -28,12 +23,8 @@
             text-decoration: none;
             font-weight: 400;
         }
+        .nav a:hover { color: #cc0000; }
 
-        .nav a:hover {
-            color: #cc0000;
-        }
-
-        /* Titles */
         h1 {
             color: #cc0000;
             font-size: 40px;
@@ -56,28 +47,15 @@
             font-weight: 300;
         }
 
-        /* Ensure NO auto-capitalization */
-        h1, h2, p {
-            text-transform: none;
-        }
-
-        /* Mobile adjustments */
         @media (max-width: 700px) {
-            h1 {
-                font-size: 32px;
-            }
-            .category-title {
-                font-size: 22px;
-            }
-            .member-name {
-                font-size: 16px;
-            }
+            h1 { font-size: 32px; }
+            .category-title { font-size: 22px; }
+            .member-name { font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <div class="nav">
         <a href="index.html">Home</a>
         <a href="roster.html">Roster</a>
@@ -89,100 +67,86 @@
 
     <h1>STAB Roster</h1>
 
-    <!-- Leader -->
-    <h2 class="category-title">Leader</h2>
-    <p class="member-name">Coolben</p>
+    <div id="roster"></div>
 
-    <!-- Council Members -->
-    <h2 class="category-title">Council Members</h2>
-    <p class="member-name">Fliper456</p>
-    <p class="member-name">Cheez</p>
-    <p class="member-name">sL_Knivez</p>
-    <p class="member-name">GreenBeanBlades</p>
-    <p class="member-name">BigCletus</p>
-    <p class="member-name">HNB_Goblin</p>
-    <p class="member-name">Chove Sourys</p>
+    <script>
+        const FIXED_ORDER = ["Leader", "Council Members", "BATS Captain"];
 
-    <!-- BATS Captain -->
-    <h2 class="category-title">BATS Captain</h2>
-    <p class="member-name">zVex_Redo</p>
+        async function loadRoster() {
+            const response = await fetch("members.json");
+            const data = await response.json();
 
-    <!-- STAB AND BATS -->
-    <h2 class="category-title">STAB AND BATS</h2>
-    <p class="member-name">4 IQ</p>
-    <p class="member-name">ajmac05</p>
-    <p class="member-name">Baby Cheez</p>
-    <p class="member-name">BigBabyBilly</p>
-    <p class="member-name">Beck</p>
-    <p class="member-name">Bella</p>
-    <p class="member-name">BigZomKiller</p>
-    <p class="member-name">Booom</p>
-    <p class="member-name">Buggs Cutties</p>
-    <p class="member-name">Chinese Goblin</p>
-    <p class="member-name">Djjoker</p>
-    <p class="member-name">Evening Steel</p>
-    <p class="member-name">FairyBlossom</p>
-    <p class="member-name">Father Mush</p>
-    <p class="member-name">Hades</p>
-    <p class="member-name">icantknife</p>
-    <p class="member-name">ImYubYub</p>
-    <p class="member-name">Itachi</p>
-    <p class="member-name">ItzChancieYT</p>
-    <p class="member-name">JudgeFudge</p>
-    <p class="member-name">K-Pop_Girl</p>
-    <p class="member-name">Lucid</p>
-    <p class="member-name">McMighyPan</p>
-    <p class="member-name">Mira</p>
-    <p class="member-name">MSLG_21</p>
-    <p class="member-name">Nuro_xReQi95</p>
-    <p class="member-name">Poptart</p>
-    <p class="member-name">Quack Jr</p>
-    <p class="member-name">RedneckKnives</p>
-    <p class="member-name">Stxrm_Vision</p>
-    <p class="member-name">SubVenOm</p>
-    <p class="member-name">The Foolish Ghost</p>
-    <p class="member-name">Trizzle</p>
-    <p class="member-name">RecklessV2</p>
-    <p class="member-name">Yamama</p>
-    <p class="member-name">YNBSpazzz</p>
+            const container = document.getElementById("roster");
+            container.innerHTML = "";
 
-    <!-- Knifing -->
-    <h2 class="category-title">Knifing</h2>
-    <p class="member-name">Butter Knives</p>
-    <p class="member-name">Cloud Walker</p>
-    <p class="member-name">DefyPandora</p>
-    <p class="member-name">Euro</p>
-    <p class="member-name">HollowMooN</p>
-    <p class="member-name">Hxtchetstabs</p>
-    <p class="member-name">LA_Knife</p>
-    <p class="member-name">LastBlade</p>
-    <p class="member-name">LuckyCharms</p>
-    <p class="member-name">MystqcBladez</p>
-    <p class="member-name">Nenja</p>
-    <p class="member-name">ParadoxShade</p>
-    <p class="member-name">Pro_Exotic</p>
-    <p class="member-name">Ruthless Kitten</p>
-    <p class="member-name">Timothy</p>
-    <p class="member-name">Trip</p>
-    <p class="member-name">VoidKnifing</p>
-    <p class="member-name">YamiTheNinja</p>
+            // Render fixed categories in exact order
+            FIXED_ORDER.forEach(category => {
+                renderCategory(container, category, data[category]);
+            });
 
-    <!-- Sniping -->
-    <h2 class="category-title">Sniping</h2>
-    <p class="member-name">Bhazy</p>
-    <p class="member-name">Casually Mid</p>
-    <p class="member-name">Fadra</p>
-    <p class="member-name">HNB_Nick_Farted</p>
-    <p class="member-name">HyperSlump</p>
-    <p class="member-name">iiTZSmxsh</p>
-    <p class="member-name">Itz2Ezy_Fire</p>
-    <p class="member-name">Lahpumkid</p>
-    <p class="member-name">Reality</p>
-    <p class="member-name">Sainty</p>
-    <p class="member-name">SeTHeR</p>
-    <p class="member-name">Slasher</p>
-    <p class="member-name">Wallstreetaj</p>
-    <p class="member-name">WetBrunette</p>
+            // Render remaining categories alphabetically
+            Object.keys(data)
+                .filter(cat => !FIXED_ORDER.includes(cat))
+                .sort()
+                .forEach(category => {
+                    const sortedMembers = [...data[category]].sort((a, b) => a.localeCompare(b));
+                    renderCategory(container, category, sortedMembers);
+                });
+        }
+
+        function renderCategory(container, title, members) {
+            const h2 = document.createElement("h2");
+            h2.className = "category-title";
+            h2.textContent = title;
+            container.appendChild(h2);
+
+            members.forEach(name => {
+                const p = document.createElement("p");
+                p.className = "member-name";
+                p.textContent = name;
+                container.appendChild(p);
+            });
+        }
+
+        // Console Commands
+        window.addMember = function(category, name) {
+            fetch("members.json")
+                .then(r => r.json())
+                .then(data => {
+                    if (!data[category]) data[category] = [];
+                    data[category].push(name);
+
+                    saveJSON(data);
+                });
+        };
+
+        window.removeMember = function(category, name) {
+            fetch("members.json")
+                .then(r => r.json())
+                .then(data => {
+                    if (!data[category]) return;
+
+                    data[category] = data[category].filter(n => n !== name);
+
+                    saveJSON(data);
+                });
+        };
+
+        function saveJSON(data) {
+            const blob = new Blob([JSON.stringify(data, null, 4)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "members.json";
+            a.click();
+
+            alert("Download updated members.json and upload it to GitHub.");
+        }
+
+        loadRoster();
+    </script>
 
 </body>
 </html>
+
